@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dark Brute Force Simulator</title>
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>☠️ Dark Brute Force Attack Simulator ☠️</h1>
+  <form id="attackForm">
+    <div class="box">
+      Target IP/URL: <input name="target" id="target" value="http://127.0.0.1:5000/login"><br><br>
+      Username: <input name="username" id="username" value="admin"><br><br>
+      Password List (comma separated): <input name="passwords" id="passwords" value="1234,password,admin,letmein"><br><br>
+      Max Attempts: <input name="max_attempts" id="max_attempts" type="number" min="10" value="10"><br><br>
+      Delay (sec): <input name="delay" id="delay" type="number" value="1"><br><br>
+      <button type="submit">🧨 Launch Attack</button>
+    </div>
+  </form>
+
+  <div class="box">
+    <h3>☠️ Status Panel ☠️</h3>
+    <p><strong>Attempts:</strong> <span id="attempts">0</span></p>
+    <p><strong>Status:</strong> <span id="status">Idle</span></p>
+    <p><strong>Time Taken:</strong> <span id="duration">0</span>s</p>
+  </div>
+  <div class="box">
+    <h3>📜 Attack Log 📜</h3>
+    <div id="log-output"></div>
+  </div>
+  <div class="box">
+    <h3>📊 Attempt Chart 📊</h3>
+    <canvas id="attemptChart" width="400" height="150"></canvas>
+  </div>
+
+  <audio id="tick" src="/static/tick.wav"></audio>
+  <audio id="success" src="/static/success.wav"></audio>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
